@@ -1,0 +1,50 @@
+
+<ion-view view-title="Sign up">
+    
+    <ion-content class="splash1 has-header padding">
+            <img ng-click="load_image()" ng-src="{{image_gravatar}}" background-position="center" style="max-width:40%; max-height:40%; border-radius: 50%; margin-right: 80%; margin-left: 30%;">   
+             
+         <form role="form" name="form1"> 
+             <p>*click image to view your available gravatar image, after filling email address field</p>
+            <div class="item-input-inset">
+                        <label class="item-input-wrapper">
+                            <input  type="text" placeholder="First Name" class="form-control" required ng-model="data.firstName">
+                        </label>
+            </div>
+            <div class="item-input-inset">
+                        <label class="item-input-wrapper">
+                            <input  type="text" placeholder="Last Name" class="form-control" required ng-model="data.lastName">
+                        </label>
+            </div>
+            <div class="item-input-inset">
+                        <label class="item-input-wrapper">
+                            <input  type="email" placeholder="Email Address" class="form-control" required ng-model="data.emailAddress">
+                        </label>
+            </div>   
+            <div class="item-input-inset">
+                        <label class="item-input-wrapper">
+                            <input  type="password" placeholder="Password" class="form-control" required ng-model="data.password">
+                        </label>
+            </div>
+            
+             <div class="item-input-inset">
+                        <label class="item-input-wrapper">
+                            <input  type="password" placeholder="Confirm Password" class="form-control" required ng-model="data.confirmPassword">
+                        </label>
+            </div>
+            
+        </div>
+
+        <div class="item-input-inset" style="color:red">
+              {{user_state}}      
+           </div>
+
+        <div class="padding">
+            <button class="button button-block button-positive" ng-disabled="form1.$invalid" ng-click="register()">Submit</button>
+        </div>
+
+         </form>    
+      
+    </ion-content>
+</body>
+</html>

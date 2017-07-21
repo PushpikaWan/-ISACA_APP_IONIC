@@ -1,0 +1,22 @@
+<ion-header-bar class="bar-positive">
+  <h2 class="title">More Info</h2>
+</ion-header-bar>
+
+<ion-view>
+  <ion-content>
+    <ion-list class="list-inset">
+      <ion-item class="item-text-wrap">
+          <img ng-src="{{image_url}}{{eventID}}.jpg " style="max-width: 100%;height: auto;"
+            alt="{{eventName }} Photo">
+          <h2>{{ eventName }}</h2>
+          <p>{{eventDesc }}</p>
+          
+           <h3><i class="icon ion-calendar"></i><B>  Date</B><span></h3> <p>{{startingDate }}</p></span>
+           <h3><i class="icon ion-clock"></i><B>  Time</B></h3> <span> <p>{{startingTime}} - {{endingTime}}</p></span>
+           <h3><i class="ion-location"></i><B>  Venue</B></h3><span> <p>{{venue}}</p></span>
+           
+           <!--<h3><i class="icon ion-email"></i><B>  End</B></h3> <p>{{EndingingDate }}  {{endingTime}}</p> -->
+      </ion-item>
+    </ion-list> 
+  </ion-content>
+</ion-view>

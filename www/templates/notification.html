@@ -1,0 +1,41 @@
+<ion-view view-title="Notifications">
+      
+
+ <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">   
+    <ion-list>
+        <ion-item  class="item item-text-wrap" ng-repeat="item in records">
+             <div ng-if="like_seen(item.tweetID)" > 
+                  <div class="item item-avatar"style="background-color:white;">
+                        <img class="avatar" ng-src="{{item.gravatarLink}}" alt="avatar"></span>  
+                        <div ng-if="like_display_1(item.tweetID)"> 
+                            {{item.user}} interests a your post "{{item.Post}}"
+                        </div> 
+                        <div ng-if="like_display_one(item.tweetID)"> 
+                             {{item.user}} and {{correct_likes}} other person interest a your post "{{item.Post}}" 
+                        </div>
+                        <div ng-if="like_display_other(item.tweetID)"> 
+                             {{item.user}} and {{correct_likes}} other people interest a your post "{{item.Post}}" 
+                        </div>
+                           
+                 </div>      
+             </div>
+                        
+             <div ng-if="like_notseen(item.tweetID)" >   
+                  <div class="item item-avatar"style="background-color:#CFD8DC;">
+                        <img class="avatar" ng-src="{{item.gravatarLink}}" alt="avatar"></span>  
+                        <div ng-if="like_display_1(item.tweetID)"> 
+                            {{item.user}} interests a your post "{{item.Post}}" 
+                        </div>
+                        <div ng-if="like_display_one(item.tweetID)"> 
+                            {{item.user}} and {{correct_likes}} other person interest a your post "{{item.Post}}" 
+                        </div>   
+                        <div ng-if="like_display_other(item.tweetID)"> 
+                            {{item.user}} and {{correct_likes}} other people interest a your post "{{item.Post}}" 
+                        </div>   
+                 </div>
+             </div>
+            
+        </ion-item>
+</ion-list>
+ </ion-content>
+</ion-view>

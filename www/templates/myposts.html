@@ -1,0 +1,70 @@
+
+<ion-view view-title="My Posts">
+ 
+
+ <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">   
+           <ion-refresher on-refresh="doRefresh()">
+           </ion-refresher>
+    
+    <ion-list>
+    <div ng-repeat='item in records' class="list card">
+            <div class="item item-avatar">
+                <img class="avatar" ng-src="{{item.gravatarLink}}" alt="avatar"></span>
+                <h2>{{item.userName}}</h2>
+                <p>{{item.postTime}}</p>
+                  <span><button class="icon ion-trash-a" ng-click="showConfirm({{item.tweetID}})"></button></span>
+            </div>
+
+                <div class="item item-body">
+       <!--         <img class="full-image" src="delorean.jpg">
+      -->
+                <p>
+                {{item.Post}}
+                </p>
+                      <p>
+                    <div ng-if="is_image_avilable(item.tweetID)" > 
+                      <img ng-src="{{image_url}}{{item.tweetID}}.jpg " style="max-width: 100%;height: auto;"alt="{{eventName }} Photo">
+                    </div>
+                </p>
+                 <p>
+                    <div ng-if="display_like(item.tweetID)">   
+                        <p style="color:#417D9A;font-size:75%;display:inline-block;" likeCount=0" >{{item.likes}}
+                        <span class="icon ion-star" style="color:#417D9A;font-size:75%;display:inline-block;"></span></p>
+                    </div>
+                    
+                    <div ng-if="display_unlike(item.tweetID)" >
+                        <div ng-if="check_like_zero(item.likes)">   
+                            <span style="color:gray; font-size:75%;display:inline-block;" likeCount=0" >be first interest</span>
+                        </div>
+                        <div ng-if="check_like_notzero(item.likes)" >   
+                            <p style="color:gray; font-size:75%;display:inline-block;" likeCount=0" >{{item.likes}}
+                            <span class="icon ion-star" style="color:gray;font-size:75%;display:inline-block;"></span></p>
+                        </div>
+                    </div>
+                    
+                    </p>
+                </div>
+                <div class="item item-text-wrap">
+                    <p>
+                    <div ng-if="display_like(item.tweetID)" >   
+                        <a href="#" ng-click="likeClick({{item.tweetID}})" class="subdued" style="color:#417D9A" likeCount=0" > <i class="icon ion-star" style="color:#417D9A"></i>
+                        interest</a>
+                    </div>
+                    
+                    <div ng-if="display_unlike(item.tweetID)" >
+                        <div ng-if="check_like_zero(item.likes)">   
+                            <a href="#" ng-click="likeClick({{item.tweetID}})" class="subdued" style="color:gray" likeCount=0" > <i class="icon ion-star" style="color:gray"></i> interest</a>
+                        </div>
+                        <div ng-if="check_like_notzero(item.likes)">   
+                            <a href="#" ng-click="likeClick({{item.tweetID}})" class="subdued" style="color:gray" likeCount=0" > <i class="icon ion-star" style="color:gray"></i>interest</a>
+                        </div>
+                    </div>
+                    
+                    </p>
+                </div>
+     </div>
+
+    </ion-list>
+    </ion-content>
+ 
+</ion-view>

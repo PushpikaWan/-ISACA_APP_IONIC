@@ -1,0 +1,32 @@
+<ion-view view-title="Events">
+
+<div class="bar bar-subheader 
+  item-input-inset bar-light">
+  <label class="item-input-wrapper">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="search" ng-model="query" placeholder="Search">
+  </label>
+</div>
+
+<ion-content 
+  class="has-subheader">
+  <ion-refresher on-refresh="doRefresh()">
+  </ion-refresher>
+  <ion-list 
+    show-delete="data.showDelete"
+    show-reorder="data.showReorder">
+    
+    <ion-item ng-class="{'star': item.star}" 
+    ng-repeat='item in records | filter: query'
+    class="item-thumbnail-left item-icon-right
+      item-text-wrap" href="#" ng-click="postClick({{item.eventID}})">
+      <img ng-src="{{image_url}}{{item.eventID}}.jpg"
+        alt="{{ item.eventName }} Photo">
+      <h3>{{item.eventName}}</h3>
+      <h4>{{item.startingDate}}</h4>
+      <p>{{item.eventDesc | limitTo: 100}}
+      {{ item.eventDesc.length > 150 ? '&hellip;' : '' }}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
+</ion-view>

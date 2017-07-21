@@ -1,0 +1,28 @@
+<ion-view hide-nav-bar="true">
+  <ion-content class="splash  padding" scroll="false">
+   
+        <form style="padding padding-top: 300px; padding-right: 40px; padding-bottom: 50px; padding-left: 40px; margin-top: 65%" role="form" name="form1">  
+                <div class="item-input-inset">
+                        <label class="item-input-wrapper">
+                            <input  type="email" placeholder="Email address" class="form-control" required ng-model="data.username">
+                        </label>
+                </div>    
+            
+       
+             <div class="item-input-inset">
+                        <label class="item-input-wrapper">
+                            <input  type="password" placeholder="Password" class="form-control" required ng-model="data.pass">
+                        </label>
+                </div>
+        
+        <button class="button button-block button-positive" type="submit" ng-disabled="form1.$invalid" ng-click="login()">Submit</button>
+        </form>
+           <div class="item-input-inset" style="color:red">
+              {{user_state}}      
+           </div>
+          <button class="button button-positive button-clear button-full" style="padding-top: 5px;color:white" ui-sref="forms">Create New Account</button>
+          <button class="button button-positive button-clear button-full" style="padding-top: 2px; color:white" ui-sref="forgetpassword">forget Password ?</button>
+
+  </ion-content>
+
+</ion-view>
